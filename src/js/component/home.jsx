@@ -12,14 +12,12 @@ export class Home extends React.Component{
 
 function Navbar() {
     return (
-        <div className="container-fluid">
-            <div className="row">
-                <nav className="navbar navbar-dark bg-dark">
-                    <a className="navbar-brand" href="#">
-                        <h2>Start Bootstrap</h2>
-                    </a>
-                </nav>
+        <nav className="navbar navbar-dark bg-dark">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="#">
+                    <h2>Start Bootstrap</h2>
+                </a>
             </div>
-        </div>
+        </nav>
     );
 }
