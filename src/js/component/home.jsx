@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //create your first component
 export class Home extends React.Component{
@@ -7,8 +8,15 @@ export class Home extends React.Component{
         return (
             <div>
                 <Navbar />
-                <Greeting />
-                <Card /> <Card /> <Card /> <Card />
+                <div className = "container">
+                    <Greeting />
+                    <div className="row text-center">
+                        <Card hrefImage={"https://picsum.photos/500/325"} cardTitle={"Card title"} text={"Some quick example text to build on the card title and make up the bulk of the card's content."} hrefLink={"https://www.youtube.com/watch?v=BQ0mxQXmLsk"} />
+                        <Card hrefImage={"https://picsum.photos/500/325"} cardTitle={"Card title"} text={"Some quick example text to build on the card title and make up the bulk of the card's content."} hrefLink={"https://www.youtube.com/watch?v=BQ0mxQXmLsk"} />
+                        <Card hrefImage={"https://picsum.photos/500/325"} cardTitle={"Card title"} text={"Some quick example text to build on the card title and make up the bulk of the card's content."} hrefLink={"https://www.youtube.com/watch?v=BQ0mxQXmLsk"} />
+                        <Card hrefImage={"https://picsum.photos/500/325"} cardTitle={"Card title"} text={"Some quick example text to build on the card title and make up the bulk of the card's content."} hrefLink={"https://www.youtube.com/watch?v=BQ0mxQXmLsk"} />
+                    </div>
+                </div>
                 <Footer />
                 
                 
@@ -43,33 +51,37 @@ function Navbar() {
 
 function Greeting() {
     return(
-        <div className = "container">
-            <div className = "row">
-                <div style = {{backgroundColor: "#e3e5e8", marginTop: "30px", borderRadius: "10px", padding: "30px"}} className = "col-12">
-                    <h1 style = {{fontFamily: '"Open Sans Condensed", sans-serif', fontSize: "75px"}}>A Warm Welcome!</h1>
-                    <p style ={{fontSize: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-                    <a href="https://www.youtube.com/watch?v=3YxaaGgTQYM" className="btn btn-primary">Go somewhere</a>
-                </div>
+        <div className = "row">
+            <div style = {{backgroundColor: "#e3e5e8", marginTop: "30px", borderRadius: "10px", padding: "30px"}} className = "col-12">
+                <h1 style = {{fontFamily: '"Open Sans Condensed", sans-serif', fontSize: "75px"}}>A Warm Welcome!</h1>
+                <p style ={{fontSize: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+                <a href="https://www.youtube.com/watch?v=3YxaaGgTQYM" className="btn btn-primary">Go somewhere</a>
             </div>
         </div>
         );
 }
 
-
-function Card(hrefImage, cardTitle, text, hrefLink) {
+function Card(props) {
     return(
-        <div className = "col-3" style ={{display: "inline-block", marginTop: "30px", marginLeft: "88px", marginBottom: "30px", marginRight: "-120px"}}>
-            <div className="card" style={{width: "18rem"}}>
-                <img className="card-img-top" src="https://picsum.photos/500/325"/*{hrefImage}*/ alt="Card image cap"></img>
+        <div className = "col-3" style ={{marginTop: "30px", marginBottom: "30px"}}>
+            <div className="card">
+                <img className="card-img-top" src={props.hrefImage} alt="Card image cap"></img>
                 <div className="card-body">
-                    <h5 className="card-title"/*{cardTitle}*/>Card title</h5> 
-                    <p className="card-text"/*{text}*/>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="https://www.youtube.com/watch?v=BQ0mxQXmLsk"/*{hrefLink}*/ className="btn btn-primary">Go somewhere</a>
+                    <h5 className="card-title">{props.cardTitle}</h5> 
+                    <p className="card-text">{props.text}</p>
+                    <a href={props.hrefLink} className="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
         );
 }
+Card.propTypes = {
+  hrefImage: PropTypes.string,
+  cardTitle: PropTypes.string,
+  text: PropTypes.string,
+  hrefLink: PropTypes.string
+};
+
 
 function Footer() {
     return(
