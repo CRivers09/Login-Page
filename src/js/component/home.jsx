@@ -8,7 +8,7 @@ export class Home extends React.Component{
             <div>
                 <Navbar />
                 <Greeting />
-                <Card style = {{display: "inline"}}/> <Card style = {{display: "inline"}} />
+                <Card /> <Card /> <Card /> <Card />
                 <Footer />
                 
                 
@@ -21,8 +21,20 @@ function Navbar() {
     return (
         <nav className="navbar navbar-dark bg-dark">
             <div className="contaginer-fluid">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="https://www.youtube.com/watch?v=Ph54wQG8ynk">
                     <h3 style = {{paddingLeft: "70px"}}>Start Bootstrap</h3>
+                </a>
+                <a className="navbar-brand" href="https://www.youtube.com/watch?v=HBxt_v0WF6Y">
+                    <p style = {{paddingRight: "50px", marginLeft: "500px"}}>Home</p>
+                </a>
+                <a className="navbar-brand" href="https://www.youtube.com/watch?v=pa14VNsdSYM">
+                    <p style = {{paddingRight: "50px"}}>About</p>
+                </a>
+                <a className="navbar-brand" href="https://www.youtube.com/watch?v=kHLHSlExFis">
+                    <p style = {{paddingRight: "50px"}}>Services</p>
+                </a>
+                <a className="navbar-brand" href="https://www.youtube.com/watch?v=aJOTlE1K90k">
+                    <p style = {{paddingRight: "50px"}}>Contact</p>
                 </a>
             </div>
         </nav>
@@ -46,7 +58,7 @@ function Greeting() {
 
 function Card(hrefImage, cardTitle, text, hrefLink) {
     return(
-        <div className = "col-3" style ={{marginTop: "30px", marginLeft: "88px", marginBottom: "30px"}}>
+        <div className = "col-3" style ={{display: "inline-block", marginTop: "30px", marginLeft: "88px", marginBottom: "30px", marginRight: "-120px"}}>
             <div className="card" style={{width: "18rem"}}>
                 <img className="card-img-top" src="https://picsum.photos/500/325"/*{hrefImage}*/ alt="Card image cap"></img>
                 <div className="card-body">
